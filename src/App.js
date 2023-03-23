@@ -9,7 +9,12 @@ import WordsToTiles from './helper/WordsToTiles';
 import LocalStorage from './helper/LocalStorage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleQuestion, faChartSimple, faCakeCandles } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleQuestion,
+  faChartSimple,
+  faCakeCandles,
+  faRotateRight
+} from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 window.$ANSWER_ARR = WordsToLetters(["super", "happy", "while", "being", "yours"]);
@@ -30,6 +35,13 @@ function App() {
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 24 },
     transition: { duration: 0.25 }
+  }
+
+  const resetGame = () => {
+    localStorage.removeItem('haydenssential-moves');
+    localStorage.removeItem('haydenssential-current-tiles');
+    localStorage.removeItem('haydenssential-game-won');
+    window.location.reload(false);
   }
 
   const clickTiles = () => {
@@ -121,6 +133,12 @@ function App() {
         {showDone && <Done moves={moves} />}
       </div>
       <p>{moves} Moves</p>
+      {gameWon && 
+        <button className='reset-button' onClick={resetGame}>
+          Restart{' '}
+          <FontAwesomeIcon icon={faRotateRight} />
+        </button>
+      }
       <AnimatePresence>
         {showHowToPlay && <HowToPlay closePopup={() => setShowHowToPlay(false)} animations={popupAnimations} />}
       </AnimatePresence>

@@ -34,3 +34,12 @@
   gap: 5px;
   position: relative;
 }
+.reset-button {
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--medgray);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
