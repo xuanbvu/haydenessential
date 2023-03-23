@@ -1,0 +1,43 @@
+.dim-background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-title {
+  margin: auto 0;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+.popup-exit {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.25rem;
+  color: var(--medgray);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 15px;
+}
+.popup hr {
+  background: var(--medgray);
+  height: 1px;
+  border: none;
+  margin-top: 15px;
+}
+.how-to-play, .statistics, .bday-message {
+  background-color: var(--black);
+  width: 325px;
+  height: 425px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 15px;
+}
