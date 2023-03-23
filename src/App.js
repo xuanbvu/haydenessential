@@ -83,7 +83,7 @@ function App() {
           <FontAwesomeIcon icon={faCircleQuestion} />
         </button>
         <span />
-        <h1>Haydenessential</h1>
+        <h1>Haydenssential</h1>
         <button onClick={() => setShowStatistics(true)}>
           <FontAwesomeIcon icon={faChartSimple} />
         </button>
