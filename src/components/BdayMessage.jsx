@@ -2,12 +2,18 @@ import React from 'react';
 import Popup from './Popup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 import './BdayMessage.css';
 
-const BdayMessage = ({ closePopup }) => {
+const BdayMessage = ({ closePopup, animations }) => {
   return (
-    <Popup closePopup={closePopup} onClick={(e) => e.stopPropagation()}>
-      <div className='bday-message'>
+    <Popup closePopup={closePopup}>
+      <motion.div
+        className='bday-message'
+        key='bday-message'
+        onClick={(e) => e.stopPropagation()}
+        {...animations}
+      >
         <h2 className='popup-title'>To Hayden</h2>
         <button className='popup-exit' onClick={closePopup}>
           <FontAwesomeIcon icon={faCircleXmark} />
@@ -24,7 +30,7 @@ const BdayMessage = ({ closePopup }) => {
         </p>
         
         <p><b>You deserve to have the most wonderful day (and year) of being 23</b></p>
-      </div>
+      </motion.div>
     </Popup>
   )
 }

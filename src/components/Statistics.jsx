@@ -2,6 +2,7 @@ import React from 'react';
 import Popup from './Popup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 import DateDifference from '../helper/DateDifference';
 import './Statistics.css';
 
@@ -35,7 +36,12 @@ const STATS_CHART = [
 
 const WEBSITE_URL = 'https://haydenssential.vercel.app';
 
-const Statistics = ({ closePopup, won, moves }) => {
+const Statistics = ({
+  closePopup,
+  won,
+  moves,
+  animations
+}) => {
   const shareStats = (e) => {
     e.target.innerHTML = "Copied!";
     navigator.clipboard.writeText(`${WEBSITE_URL} #100 (secret message): ${moves} moves`);
@@ -46,7 +52,12 @@ const Statistics = ({ closePopup, won, moves }) => {
 
   return (
     <Popup closePopup={closePopup}>
-      <div className='statistics' onClick={e => e.stopPropagation()}>
+      <motion.div
+        className='statistics'
+        key='statistics'
+        onClick={e => e.stopPropagation()}
+        {...animations}
+      >
         <h2 className='popup-title'>Statistics</h2>
         <button className='popup-exit' onClick={closePopup}>
           <FontAwesomeIcon icon={faCircleXmark} />
@@ -101,7 +112,7 @@ const Statistics = ({ closePopup, won, moves }) => {
           )}
           <p className='statistics-blurb'>* Assuming life expectancy is 77 years old.</p>
         </div>
-      </div>
+      </motion.div>
     </Popup>
   )
 }

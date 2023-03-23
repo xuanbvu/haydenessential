@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Tile from './components/Tile';
-import { motion } from 'framer-motion';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleQuestion, faChartSimple, faCakeCandles } from '@fortawesome/free-solid-svg-icons';
 import HowToPlay from './components/HowToPlay';
 import Statistics from './components/Statistics';
 import BdayMessage from './components/BdayMessage';
 import Done from './components/Done';
 import WordsToLetters from './helper/WordsToLetters';
 import WordsToTiles from './helper/WordsToTiles';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleQuestion, faChartSimple, faCakeCandles } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 window.$ANSWER_ARR = WordsToLetters(["super", "happy", "while", "being", "yours"]);
@@ -24,6 +24,13 @@ function App() {
   const [showHowToPlay, setShowHowToPlay] = useState(false);
   const [showStatistics, setShowStatistics] = useState(false);
   const [showBdayMessage, setShowBdayMessage] = useState(false);
+
+  const popupAnimations = {
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 24 },
+    transition: { duration: 0.25 }
+  }
 
   const clickTiles = () => {
     const activeTiles = document.getElementsByClassName("active");
@@ -114,9 +121,20 @@ function App() {
         {showDone && <Done moves={moves} />}
       </div>
       <p>{moves} Moves</p>
-      {showHowToPlay && <HowToPlay closePopup={() => setShowHowToPlay(false)} />}
-      {showStatistics && <Statistics closePopup={() => setShowStatistics(false)} won={gameWon} moves={moves} />}
-      {showBdayMessage && <BdayMessage closePopup={() => setShowBdayMessage(false)} />}
+      <AnimatePresence>
+        {showHowToPlay && <HowToPlay closePopup={() => setShowHowToPlay(false)} animations={popupAnimations} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showStatistics && <Statistics
+          closePopup={() => setShowStatistics(false)}
+          won={gameWon}
+          moves={moves}
+          animations={popupAnimations}
+        />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showBdayMessage && <BdayMessage closePopup={() => setShowBdayMessage(false)} animations={popupAnimations} />}
+      </AnimatePresence>
     </div>
   );
 }

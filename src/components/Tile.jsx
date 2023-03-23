@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './Tile.css';
 
 const Tile = ({
@@ -36,13 +37,15 @@ const Tile = ({
   }
   
   return (
-    <div
+    <motion.div
       className={`letter ${tilePosition()} ${active && tilePosition() !== 'correct' && 'active'}`}
       id={currPos}
       onClick={() => setActive(!active)}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
     >
       {letter}
-    </div>
+    </motion.div>
   )
 }
 
