@@ -38,7 +38,7 @@ const WEBSITE_URL = 'https://haydenssential.vercel.app';
 const Statistics = ({ closePopup, won, moves }) => {
   const shareStats = (e) => {
     e.target.innerHTML = "Copied!";
-    navigator.clipboard.writeText(`${WEBSITE_URL} #69 (secret message): ${moves} moves`);
+    navigator.clipboard.writeText(`${WEBSITE_URL} #100 (secret message): ${moves} moves`);
     setTimeout(() => {
       e.target.innerHTML = "Share";
     }, 2000);
@@ -73,7 +73,7 @@ const Statistics = ({ closePopup, won, moves }) => {
               <h3>Game</h3>
               <div className='stats-row'>
                 <div className='stat'>
-                    <p>69</p>
+                    <p>100</p>
                     <p>Puzzle #</p>
                 </div>
                 <div className='stat'>

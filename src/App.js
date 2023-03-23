@@ -85,7 +85,7 @@ function App() {
         </button>
       </div>
       <div className='info'>
-        <p><b>#69</b> Apr 10 2023</p>
+        <p><b>#100</b> Apr 10 2023</p>
         <p><b>THEME</b> SECRET MESSAGE</p>
       </div>
       <div className='tiles'>
