@@ -34,7 +34,7 @@ const STATS_CHART = [
   },
 ]
 
-const WEBSITE_URL = 'https://haydenssential.vercel.app';
+const WEBSITE_URL = 'https://haydenessential.vercel.app';
 
 const Statistics = ({
   closePopup,
