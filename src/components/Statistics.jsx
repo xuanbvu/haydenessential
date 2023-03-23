@@ -8,28 +8,28 @@ import './Statistics.css';
 
 const STATS_CHART = [
   {
-    "category": "8 moves",
-    "percent": "33%",
+    "category": "nerd",
+    "percent": "50%",
     "color": "var(--green)"
   },
   {
-    "category": "9 moves",
-    "percent": "10%",
+    "category": "slayyy",
+    "percent": "85%",
     "color": "var(--yellow)"
   },
   {
-    "category": "10 moves",
-    "percent": "8%",
+    "category": "giggler",
+    "percent": "35%",
     "color": "var(--orange)"
   },
   {
-    "category": "11 moves",
-    "percent": "8%",
+    "category": "sassy",
+    "percent": "60%",
     "color": "var(--brown)"
   },
   {
-    "category": "12+ moves",
-    "percent": "40%",
+    "category": "best bf",
+    "percent": "100%",
     "color": "var(--medgray)"
   },
 ]
@@ -97,7 +97,7 @@ const Statistics = ({
                 </div>
               </div>
               <button className='statistics-share' onClick={(e) => shareStats(e)}>Share</button>
-              <h3>Some Chart Here</h3>
+              <h3>Personality</h3>
               <div className='statistics-chart'>
                 {STATS_CHART.map(({category, percent, color}) => {
                   return (
