@@ -1,10 +1,10 @@
 .letter {
   display: inline-block;
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.75rem;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;

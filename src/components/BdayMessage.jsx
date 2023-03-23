@@ -23,7 +23,7 @@ const BdayMessage = ({ closePopup }) => {
           <span style={{ color: 'var(--medgray)' }}> (God I cringe)</span>
         </p>
         
-        <p><b>You deserve to have the most wonderful day (and year) of being 23 {'<3'}</b></p>
+        <p><b>You deserve to have the most wonderful day (and year) of being 23</b></p>
       </div>
     </Popup>
   )

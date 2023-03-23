@@ -1,5 +1,6 @@
-.how-to-play-content {
+.how-to-play-content p {
   text-align: left;
+  line-height: 1.5rem;
 }
 .how-to-play-content img {
   display: block;
