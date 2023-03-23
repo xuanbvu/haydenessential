@@ -6,6 +6,7 @@ import BdayMessage from './components/BdayMessage';
 import Done from './components/Done';
 import WordsToLetters from './helper/WordsToLetters';
 import WordsToTiles from './helper/WordsToTiles';
+import LocalStorage from './helper/LocalStorage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion, faChartSimple, faCakeCandles } from '@fortawesome/free-solid-svg-icons';
@@ -15,10 +16,9 @@ window.$ANSWER_ARR = WordsToLetters(["super", "happy", "while", "being", "yours"
 const STARTING_TILES = ["eusor", "gaihy", "ypiln", "bspeh", "weurp"];
 
 function App() {
-  // TODO: local storage to store
-  const [moves, setMoves] = useState(0);
-  const [currentTiles, setCurrentTiles] = useState(WordsToTiles(STARTING_TILES));
-  const [gameWon, setGameWon] = useState(false);
+  const [moves, setMoves] = LocalStorage('haydenssential-moves', 0);
+  const [currentTiles, setCurrentTiles] = LocalStorage('haydenssential-current-tiles', WordsToTiles(STARTING_TILES));
+  const [gameWon, setGameWon] = LocalStorage('haydenssential-game-won', false);
 
   const [showDone, setShowDone] = useState(false);
   const [showHowToPlay, setShowHowToPlay] = useState(false);
